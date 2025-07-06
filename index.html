@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZProduction - Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="image/favicon.ico" type="image/png">
+  <!-- SEO de base -->
+<meta name="description" content="ZProduction, agence web à Kinshasa, crée des sites professionnels à partir de 80 $. Demandez un devis gratuit.">
+<meta name="keywords" content="site web Kinshasa, agence web RDC, création site Congo, site vitrine Kinshasa, développeur web RDC">
+<meta name="author" content="ZProduction">
+
+<!-- Balise pour Google et réseaux sociaux -->
+<meta property="og:title" content="ZProduction - Création de site web à Kinshasa">
+<meta property="og:description" content="Création de sites professionnels à Kinshasa dès 150 $. Boostez votre visibilité avec ZProduction.">
+<meta property="og:image" content="https://tonsite.com/">
+<meta property="og:url" content="https://tonsite.com">
+<meta name="robots" content="index, follow">
+
+
+</head>
+<body>
+ <header class="menu-header">
+  <div class="menu-logo">
+    <img src="image/IMG_6651.jpeg" alt="Logo ZProduction">
+    <span class="brand-name">ZProduction</span>
+  </div>
+  <nav class="menu-nav">
+    <a href="https://portfolio-z-production.onrender.com/" target="_blank">Voir Portfolio</a>
+  </nav>
+  <p class="tagline">Boostez votre présence en ligne avec un site professionnel à Kinshasa</p>
+</header>
+
+
+  <div class="container">
+    <section class="offer">
+      <h2>Offre Spéciale RDC</h2>
+      <p>Créez votre site vitrine à partir de <strong>80 $</strong> avec paiement en 2 fois. Design moderne, adapté aux téléphones, livré rapidement !</p>
+    </section>
+
+    <div class="cta">
+      <button onclick="scrollToForm()">Demander un devis gratuit</button>
+    </div>
+
+    <section class="form-section" id="contact">
+      <h2>Contactez-nous</h2>
+     
+<form id="whatsapp-form">
+  <input type="text" id="name" placeholder="Votre nom" required>
+  <input type="email" id="email" placeholder="Votre adresse email" required>
+  <input type="tel" id="phone" placeholder="Votre numéro WhatsApp">
+  <textarea id="message" placeholder="Parlez-nous de votre projet..." rows="5" required></textarea>
+  <button type="button" onclick="sendToWhatsApp()">Envoyer via WhatsApp</button>
+</form>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 ZProduction - Tous droits réservés
+  </footer>
+
+  <script>
+    function scrollToForm() {
+      document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function sendForm(e) {
+      e.preventDefault();
+      alert("Merci pour votre message ! Nous vous contacterons rapidement.");
+    }
+    function sendToWhatsApp() {
+    const nom = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    const numeroZProduction = "243992844701"; // Remplace par TON numéro au format international sans + (ex : 243899000000)
+    const texte = `Bonjour, je suis ${nom}. Voici mon email : ${email} et mon numéro : ${phone}. Je suis intéressé par un site web. Voici mon message : ${message}`;
+    const url = `https://wa.me/${numeroZProduction}?text=${encodeURIComponent(texte)}`;
+
+    window.open(url, "_blank");
+  }
+  </script>
+</body>
+</html>
